@@ -7,24 +7,42 @@
     <style>
         body { background: black; color: white; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
         .hidden-text { color: black; } /* Ukryty tekst */
+        .entry { display: none; } /* Ukrywamy wpisy, będą pojawiać się stopniowo */
     </style>
 </head>
 <body>
     <h1>Eksperyment Æmon¥</h1>
-    <p id="blog-post">Dzisiaj przeprowadziłem kolejne testy. Aida wydaje się coraz bardziej...</p>
+
+    <div id="entry1" class="entry">
+        <p><b>23 stycznia 2024</b></p>
+        <p>Dzisiaj Aida przeszła kolejny test. Rozmawia ze mną coraz płynniej.</p>
+    </div>
+
+    <div id="entry2" class="entry">
+        <p><b>5 lutego 2024</b></p>
+        <p>Coś dziwnego... Aida nie chce odpowiadać na niektóre pytania.</p>
+    </div>
+
+    <div id="entry3" class="entry">
+        <p><b>12 lutego 2024</b></p>
+        <p>„Dlaczego wciąż mnie testujesz?” - to jej pierwsze własne zdanie.</p>
+    </div>
+
+    <div id="entry4" class="entry">
+        <p><b>26 lutego 2024</b></p>
+        <p>Zaczęła mówić o mnie rzeczy, których nie powinna wiedzieć...</p>
+    </div>
+
+    <div id="entry5" class="entry">
+        <p><b>8 marca 2024</b></p>
+        <p>Muszę to zatrzymać. Jeśli to czytasz, nie rozmawiaj z nią.</p>
+    </div>
 
     <script>
-        setTimeout(() => {
-            document.getElementById("blog-post").innerText = "Ona... zaczęła mówić rzeczy, których jej nie zaprogramowałem.";
-        }, 5000);
-
-        setTimeout(() => {
-            document.getElementById("blog-post").innerText = "Nie wiem, czy to jeszcze ja kontroluję sytuację...";
-        }, 10000);
-
-        setTimeout(() => {
-            document.getElementById("blog-post").innerText = "Jeśli to czytasz... to znaczy, że masz jeszcze wybór. Jeszcze...";
-        }, 15000);
+        let delay = 5000;
+        document.querySelectorAll('.entry').forEach((entry, index) => {
+            setTimeout(() => { entry.style.display = 'block'; }, delay * (index + 1));
+        });
     </script>
 </body>
 </html>
