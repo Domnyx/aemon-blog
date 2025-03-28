@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Æmon¥</title>
+    <style>
+        body { background: black; color: white; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .hidden-text { color: black; } /* Ukryty tekst */
+    </style>
+</head>
+<body>
+    <h1>Eksperyment Æmon¥</h1>
+    <p id="blog-post">Dzisiaj przeprowadziłem kolejne testy. Aida wydaje się coraz bardziej...</p>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById("blog-post").innerText = "Ona... zaczęła mówić rzeczy, których jej nie zaprogramowałem.";
+        }, 5000);
+
+        setTimeout(() => {
+            document.getElementById("blog-post").innerText = "Nie wiem, czy to jeszcze ja kontroluję sytuację...";
+        }, 10000);
+
+        setTimeout(() => {
+            document.getElementById("blog-post").innerText = "Jeśli to czytasz... to znaczy, że masz jeszcze wybór. Jeszcze...";
+        }, 15000);
+    </script>
+</body>
+</html>
