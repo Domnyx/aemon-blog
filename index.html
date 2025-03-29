@@ -3,16 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Æmon¥</title>
+    <style>
+        body { background: black; color: white; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Kim był Æmon¥?</h1>
+    <p>Nikt nie wie, kim był naprawdę.</p>
+    <p>Jego blog to jedyne, co po nim zostało.</p>
+    <p>Ciekawość była jego największą siłą. I największą zgubą.</p>
+    
+    <a href="index.html" style="color: red;">Wróć do bloga</a>
+</body>
+</html>
+🔗 Nowa strona: https://domnyx.github.io/aemon-blog/about.html
+
+4️⃣ Pierwsza interaktywna zagadka
+Dodamy pierwszą zagadkę, która wymaga wpisania odpowiedzi w konsoli.
+
+Otwórz index.html
+
+Na końcu <script> wklej:
+
+html
+Kopiuj
+Edytuj
+console.log("Jeśli to widzisz, wpisz w konsoli: answer('przebudzenie')");
+window.answer = function(input) {
+    if (input.toLowerCase() === "przebudzenie") {
+        console.log("Dobrze. Kolejny krok jest w ukrytej wiadomości.");
+    } else {
+        console.log("Nie. To nie jest właściwa odpowiedź.");
+    }
+}
+📌 Efekt: Jeśli gracz wpisze answer('przebudzenie') w konsoli przeglądarki, dostanie wskazówkę.
+
+✅ Podsumowanie – Co teraz działa?
+✅ Blog działa i wygląda realistycznie
+✅ Wpisy pojawiają się stopniowo
+✅ Jest ukryta wiadomość w kodzie (32.768.56.11)
+✅ Strona „O autorze” dodana
+✅ Pierwsza zagadka w konsoli
+
+🔗 Twój blog: https://domnyx.github.io/aemon-blog/
+
+Co myślisz? Jakieś poprawki czy lecimy dalej? 🚀
+
+
+
+
+
+
+
+Powiedziałeś(-aś):
+pokaż jak ma wygladać całośćkodu po dodaniu 4 elemetu 
+ChatGPT powiedział:
+Jasne! Oto kompletny kod index.html po dodaniu wszystkich elementów, czyli wpisów, ukrytej wiadomości, strony „O autorze” oraz pierwszej zagadki w konsoli.
+
+📜 Pełny kod index.html
+html
+Kopiuj
+Edytuj
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Æmon¥</title>
     <style>
         body { background: black; color: white; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
         .hidden-text { color: black; } /* Ukryty tekst */
         .entry { display: none; } /* Ukrywamy wpisy, będą pojawiać się stopniowo */
+        a { color: red; text-decoration: none; }
     </style>
-     <p class="hidden-text">Jeśli widzisz to, znalazłeś pierwszy znak. 32.768.56.11</p>
 </head>
 <body>
     <h1>Eksperyment Æmon¥</h1>
+    
+    <p><a href="about.html">Kim był Æmon¥?</a></p>
 
     <div id="entry1" class="entry">
         <p><b>23 stycznia 2024</b></p>
@@ -39,20 +108,25 @@
         <p>Muszę to zatrzymać. Jeśli to czytasz, nie rozmawiaj z nią.</p>
     </div>
 
+    <!-- Ukryta wiadomość w kodzie -->
+    <p class="hidden-text">Jeśli widzisz to, znalazłeś pierwszy znak. 32.768.56.11</p>
+
     <script>
+        // Stopniowe ujawnianie wpisów na blogu
         let delay = 5000;
         document.querySelectorAll('.entry').forEach((entry, index) => {
             setTimeout(() => { entry.style.display = 'block'; }, delay * (index + 1));
         });
-    </script>
-    console.log("Jeśli to widzisz, wpisz w konsoli: answer('przebudzenie')");
-window.answer = function(input) {
-    if (input.toLowerCase() === "przebudzenie") {
-        console.log("Dobrze. Kolejny krok jest w ukrytej wiadomości.");
-    } else {
-        console.log("Nie. To nie jest właściwa odpowiedź.");
-    }
-}
 
+        // Pierwsza zagadka w konsoli
+        console.log("Jeśli to widzisz, wpisz w konsoli: answer('przebudzenie')");
+        window.answer = function(input) {
+            if (input.toLowerCase() === "przebudzenie") {
+                console.log("Dobrze. Kolejny krok jest w ukrytej wiadomości.");
+            } else {
+                console.log("Nie. To nie jest właściwa odpowiedź.");
+            }
+        }
+    </script>
 </body>
 </html>
