@@ -45,5 +45,14 @@
             setTimeout(() => { entry.style.display = 'block'; }, delay * (index + 1));
         });
     </script>
+    console.log("Jeśli to widzisz, wpisz w konsoli: answer('przebudzenie')");
+window.answer = function(input) {
+    if (input.toLowerCase() === "przebudzenie") {
+        console.log("Dobrze. Kolejny krok jest w ukrytej wiadomości.");
+    } else {
+        console.log("Nie. To nie jest właściwa odpowiedź.");
+    }
+}
+
 </body>
 </html>
